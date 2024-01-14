@@ -4,15 +4,15 @@ class GeocodeFacade
     @service = GeocodeService.new
   end
 
-  def find_lat_lon(city, state)
-    response = @service.parks_per_state(state_code)
+  def find_lat_lon(location)
+    response = @service.find_lat_lon(location)
     #want to return ruby objects
     data = JSON.parse(response.body, symbolize_names: true)
 
-    #require 'pry'; binding.pry
     #make a Poro
-    data[:data].map do |d|
-      Park.new(d)
+    #require 'pry'; binding.pry
+    data[:results].first[:locations].map do |g|
+      Geocode.new(g)
     end
   end
 end

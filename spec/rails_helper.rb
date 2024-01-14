@@ -11,8 +11,11 @@ require 'rspec/rails'
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
-  config.filter_sensitive_data("<yelp>") {
-    Rails.application.credentials.yelp[:key]
+  config.filter_sensitive_data("<mapquest>") {
+    Rails.application.credentials.mapquest[:key]
+  }
+  config.filter_sensitive_data("<weather>") {
+    Rails.application.credentials.weather[:key]
   }
   config.configure_rspec_metadata!
   config.default_cassette_options = { re_record_interval: 365.days}
