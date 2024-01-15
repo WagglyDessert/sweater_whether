@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v0 do
       resources :user_third_spaces, only: [:create]
-      get "/forecast", to: "forecast#show"
+      get "/forecast", to: "forecast#location"
     end
   end
 end

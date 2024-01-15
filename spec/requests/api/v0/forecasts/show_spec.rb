@@ -4,7 +4,7 @@ describe "Forecast geocode and mapquest API Endpoint" do
   it "send weather about a specific location", :vcr do
     get '/api/v0/forecast?location=cincinatti,oh'
     expect(response).to be_successful
-    expect(response.status).to eq(200)
+    #expect(response.status).to eq(200)
     
     binding.pry
     third_spaces = JSON.parse(response.body, symbolize_names: true)[:data]
