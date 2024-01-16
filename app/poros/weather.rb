@@ -1,44 +1,53 @@
 class Weather
   attr_reader :id,
               :type,
-              :last_updated,
-              :temperature,
-              :feels_like,
-              :humidity,
-              :uvi,
-              :visibility,
-              :condition,
-              :icon,
-              :day1,
-              :day1_sunrise,
-              :day1_sunset,
-              :day1_maxtemp,
-              :day1_mintemp,
-              :day1_condition,
-              :day1_icon,
+              :current_weather,
+              :daily_weather,
+              :hourly_weather
 
 
 
   def initialize(data)
-    binding.pry
-    @id = null
+    @id = nil
     @type = "forecast"
-    #
-    @last_updated = data[:current][:last_updated]
-    @temperature = data[:current][:temp_f]
-    @feels_like = data[:current][:feelslike_f]
-    @humidity = data[:current][:humidity]
-    @uvi = data[:current][:uv]
-    @visibility = data[:current][:vis_miles]
-    @condition = data[:current][:condition][:text]
-    @icon = data[:current][:condition][:icon]
-    #
-    @day1 = data[:forecast][:forecastday].first[:date]
-    @day1_sunrise = data[:forecast][:forecastday].first[:astro][:sunrise]
-    @day1_sunset = data[:forecast][:forecastday].first[:astro][:sunset]
-    @day1_maxtemp = data[:forecast][:forecastday].first[:day][:maxtemp_f]
-    @day1_mintemp = data[:forecast][:forecastday].first[:day][:mintemp_f]
-    @day1_condition = data[:forecast][:forecastday].first[:day][:condition][:text]
-    @day1_icon = data[:forecast][:forecastday].first[:day][:condition][:icon]
+    @daily_weather = []
+    @hourly_weather = []
+
+    current_data = data[:current]
+    @current_weather = {
+      last_updated: current_data[:last_updated],
+      temperature: current_data[:temp_f],
+      feels_like: current_data[:feelslike_f],
+      humidity: current_data[:humidity],
+      uvi: current_data[:uv],
+      visibility: current_data[:vis_miles],
+      condition: current_data[:condition][:text],
+      icon: current_data[:condition][:icon]
+    }
+    
+    daily_forecast_data = data[:forecast][:forecastday]
+    daily_forecast_data.first(5).each do |day_data|
+      @daily_weather << {
+        date: day_data[:date],
+        sunrise: day_data[:astro][:sunrise],
+        sunset: day_data[:astro][:sunset],
+        max_temp: day_data[:day][:maxtemp_f],
+        min_temp: day_data[:day][:mintemp_f],
+        condition: day_data[:day][:condition][:text],
+        icon: day_data[:day][:condition][:icon]
+      }
+    end
+
+    hourly_forecast_data = data[:forecast][:forecastday][0][:hour]
+    hourly_forecast_data.each do |hour_data|
+      @hourly_weather << {
+        time: hour_data[:time].last(5),
+        temp: hour_data[:temp_f],
+        condition: hour_data[:condition][:text],
+        icon: hour_data[:condition][:icon]
+      }
+    end
+    
   end
+  
 end

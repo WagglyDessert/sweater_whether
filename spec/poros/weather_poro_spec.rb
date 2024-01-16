@@ -1,0 +1,90 @@
+require "rails_helper"
+
+RSpec.describe Weather do
+  it "exists" do
+    json_data = File.read("spec/fixtures/denver_weather.json")
+    attrs = JSON.parse(json_data, symbolize_names: true)
+
+    search = Weather.new(attrs)
+
+    expect(search).to be_a Weather
+    expect(search.id).to eq(nil)
+    expect(search.type).to eq("forecast")
+    expect(search.current_weather).to eq({:last_updated=>"2024-01-16 09:15",
+    :temperature=>15.3,
+    :feels_like=>9.0,
+    :humidity=>46,
+    :uvi=>2.0,
+    :visibility=>9.0,
+    :condition=>"Partly cloudy",
+    :icon=>"//cdn.weatherapi.com/weather/64x64/day/116.png"})
+    expect(search.daily_weather).to eq([{:date=>"2024-01-16",
+    :sunrise=>"07:19 AM",
+    :sunset=>"05:01 PM",
+    :max_temp=>31.7,
+    :min_temp=>-4.2,
+    :condition=>"Sunny",
+    :icon=>"//cdn.weatherapi.com/weather/64x64/day/113.png"},
+   {:date=>"2024-01-17",
+    :sunrise=>"07:19 AM",
+    :sunset=>"05:02 PM",
+    :max_temp=>34.6,
+    :min_temp=>16.8,
+    :condition=>"Partly cloudy",
+    :icon=>"//cdn.weatherapi.com/weather/64x64/day/116.png"},
+   {:date=>"2024-01-18",
+    :sunrise=>"07:18 AM",
+    :sunset=>"05:03 PM",
+    :max_temp=>38.1,
+    :min_temp=>14.0,
+    :condition=>"Patchy moderate snow",
+    :icon=>"//cdn.weatherapi.com/weather/64x64/day/329.png"},
+   {:date=>"2024-01-19",
+    :sunrise=>"07:18 AM",
+    :sunset=>"05:04 PM",
+    :max_temp=>24.5,
+    :min_temp=>12.4,
+    :condition=>"Partly cloudy",
+    :icon=>"//cdn.weatherapi.com/weather/64x64/day/116.png"},
+   {:date=>"2024-01-20",
+    :sunrise=>"07:17 AM",
+    :sunset=>"05:05 PM",
+    :max_temp=>38.0,
+    :min_temp=>19.9,
+    :condition=>"Overcast",
+    :icon=>"//cdn.weatherapi.com/weather/64x64/day/122.png"}])
+    expect(search.hourly_weather).to eq([{:time=>"00:00", :temp=>-3.8, :condition=>"Clear", :icon=>"//cdn.weatherapi.com/weather/64x64/night/113.png"},
+    {:time=>"01:00", :temp=>-3.1, :condition=>"Clear", :icon=>"//cdn.weatherapi.com/weather/64x64/night/113.png"},
+    {:time=>"02:00", :temp=>-2.3, :condition=>"Clear", :icon=>"//cdn.weatherapi.com/weather/64x64/night/113.png"},
+    {:time=>"03:00", :temp=>-1.8, :condition=>"Clear", :icon=>"//cdn.weatherapi.com/weather/64x64/night/113.png"},
+    {:time=>"04:00", :temp=>-1.3, :condition=>"Clear", :icon=>"//cdn.weatherapi.com/weather/64x64/night/113.png"},
+    {:time=>"05:00",
+     :temp=>-0.5,
+     :condition=>"Partly cloudy",
+     :icon=>"//cdn.weatherapi.com/weather/64x64/night/116.png"},
+    {:time=>"06:00",
+     :temp=>-0.1,
+     :condition=>"Partly cloudy",
+     :icon=>"//cdn.weatherapi.com/weather/64x64/night/116.png"},
+    {:time=>"07:00", :temp=>0.2, :condition=>"Clear", :icon=>"//cdn.weatherapi.com/weather/64x64/night/113.png"},
+    {:time=>"08:00", :temp=>1.5, :condition=>"Sunny", :icon=>"//cdn.weatherapi.com/weather/64x64/day/113.png"},
+    {:time=>"09:00",
+     :temp=>15.3,
+     :condition=>"Partly cloudy",
+     :icon=>"//cdn.weatherapi.com/weather/64x64/day/116.png"},
+    {:time=>"10:00", :temp=>11.4, :condition=>"Sunny", :icon=>"//cdn.weatherapi.com/weather/64x64/day/113.png"},
+    {:time=>"11:00", :temp=>17.1, :condition=>"Overcast", :icon=>"//cdn.weatherapi.com/weather/64x64/day/122.png"},
+    {:time=>"12:00", :temp=>22.7, :condition=>"Overcast", :icon=>"//cdn.weatherapi.com/weather/64x64/day/122.png"},
+    {:time=>"13:00", :temp=>26.4, :condition=>"Sunny", :icon=>"//cdn.weatherapi.com/weather/64x64/day/113.png"},
+    {:time=>"14:00", :temp=>29.0, :condition=>"Sunny", :icon=>"//cdn.weatherapi.com/weather/64x64/day/113.png"},
+    {:time=>"15:00", :temp=>30.0, :condition=>"Sunny", :icon=>"//cdn.weatherapi.com/weather/64x64/day/113.png"},
+    {:time=>"16:00", :temp=>28.2, :condition=>"Sunny", :icon=>"//cdn.weatherapi.com/weather/64x64/day/113.png"},
+    {:time=>"17:00", :temp=>24.7, :condition=>"Sunny", :icon=>"//cdn.weatherapi.com/weather/64x64/day/113.png"},
+    {:time=>"18:00", :temp=>22.0, :condition=>"Clear", :icon=>"//cdn.weatherapi.com/weather/64x64/night/113.png"},
+    {:time=>"19:00", :temp=>20.4, :condition=>"Clear", :icon=>"//cdn.weatherapi.com/weather/64x64/night/113.png"},
+    {:time=>"20:00", :temp=>19.4, :condition=>"Clear", :icon=>"//cdn.weatherapi.com/weather/64x64/night/113.png"},
+    {:time=>"21:00", :temp=>18.4, :condition=>"Clear", :icon=>"//cdn.weatherapi.com/weather/64x64/night/113.png"},
+    {:time=>"22:00", :temp=>17.9, :condition=>"Clear", :icon=>"//cdn.weatherapi.com/weather/64x64/night/113.png"},
+    {:time=>"23:00", :temp=>17.9, :condition=>"Clear", :icon=>"//cdn.weatherapi.com/weather/64x64/night/113.png"}])
+  end
+end

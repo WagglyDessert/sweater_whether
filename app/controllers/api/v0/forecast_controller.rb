@@ -18,14 +18,8 @@ class Api::V0::ForecastController < ApplicationController
   end
 
   def weather(lat, lon)
-    @weather_facade = WeatherFacade.new.find_weather(lat, lon)
+    weather_facade = WeatherFacade.new.find_weather(lat, lon)
+    render json: ForecastSerializer.new(weather_facade)
   end
 
 end
-
-#http://api.weatherapi.com/v1/forecast.json?key=key&q=latlon&days=5&aqi=no&alerts=no
-#weather key
-
-#https://www.mapquestapi.com/geocoding/v1/address
-#mapquest key
-
