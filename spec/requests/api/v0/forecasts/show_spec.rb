@@ -1,8 +1,5 @@
 require 'rails_helper'
 
-#Testing should look for more than just the presence of attribute fields in the response. 
-#Testing should also determine which fields should NOT be present. (don’t send unnecessary data)
-
 describe "Forecast geocode and mapquest API Endpoint" do
   it "send weather about a specific location", :vcr do
     get '/api/v0/forecast?location=cincinatti,oh'
