@@ -56,16 +56,42 @@ EDITOR="code --wait" rails credentials:edit
 ```
 6. Close the credentials file and you should be good to start making api calls!
 
-### Release History
-* 0.0.1
-  * work in progress
-
 ### Running the tests
   -RSpec is setup so all you need to do is run:
 
 ```
 Bundle exec rspec
 ```
+
+### Happy Path Endpoints
+1. Fetch Weather Data
+Endpoint: `/api/v0/forecast`
+Description: Retrieve current weather information.
+Example Request:
+```
+bash
+curl -X GET https://your-api-base-url/api/v0/forecast?location=city
+```
+2. Restaurant Search
+Endpoint: '/api/v1/munchies'
+Description: Search for restaurants based on location.
+Example Request:
+```
+bash
+curl -X GET https://your-api-base-url/api/v1/restaurants?location=city
+```
+3. Get Directions
+Endpoint: '/api/v0/road_trip'
+Description: Get directions between two locations.
+Example Request:
+```
+bash
+curl -X GET https://your-api-base-url/api/directions?origin=city&destination=city
+```
+
+### Release History
+* 0.0.1
+  * work in progress
 
 ### Authors
   * Nathan Trautenberg
