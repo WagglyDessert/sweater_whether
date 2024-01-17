@@ -1,6 +1,6 @@
 # Sweater_Weather
 
-This is my mod3 final solo project. It involves taking a city and extracting geolocation coordinates to find weather forecast, as well as using a roadtrip from an origin to a destination to calculate what weather will be like upon arrival at destination.
+This is my mod3 final solo project at Turing. It involves taking a city and extracting geolocation coordinates to find weather forecast, as well as using a roadtrip from an origin to a destination to calculate what weather will be like upon arrival at destination.
 
 ## Learning Goals
 
@@ -22,19 +22,21 @@ This is my mod3 final solo project. It involves taking a city and extracting geo
 ### Installation
 
 1. Clone the repository.
-   ```git clone https://github.com/yourusername/your-weather-yelp-mapquest-app.git```
+   ```git clone git@github.com:WagglyDessert/sweater_whether.git```
 2. Install Dependencies
 ```bundle install```
 3. Set database
 ```rails db:{drop,create,migrate,seed}```
-4. Delete masterkey and credentials.yml.enc file and add your own api keys to credentials
+4. Delete masterkey and credentials.yml.enc file and add your own api keys to credentials.
+  Use the following code to do so:
 ```EDITOR="code --wait" rails credentials:edit```
 5. In your credentials yml that popped up, add the following:
-```yelp:
+```
+  yelp:
     key: Bearer [insert your api key here]
-   weather:
+  weather:
     key: [insert your api key here]
-   mapquest:
+  mapquest:
     key: [insert your api key here]
 ```
 6. Close the credentials file and you should be good to start making api calls!
@@ -51,4 +53,4 @@ This is my mod3 final solo project. It involves taking a city and extracting geo
   * Nathan Trautenberg
 
 ### License
-This project is licensed under the MIT License.
+[This project is licensed under the MIT License.](https://www.mit.edu/~amini/LICENSE.md)
