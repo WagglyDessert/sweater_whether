@@ -38,5 +38,39 @@ describe "Roadtrip duration from start to end" do
     expect(response_body[:data][:attributes][:weather_at_eta][:condition]).to be_a(String)
   end
 
-  #sad path testing
+  it "returns error message when missing information in parameters" do
+    user = User.create(email: "road@trip.com", password: "password", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
+    params = {
+      "origin": "",
+      "destination": "Chicago,IL",
+      "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
+    }
+    post '/api/v0/road_trip', params: params
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(422)
+    response_body = JSON.parse(response.body, symbolize_names: true)
+    expect(response_body).to be_a(Hash)
+    expect(response_body[:error]).to be_a(Array)
+    expect(response_body[:error].first[:status]).to eq("422")
+    expect(response_body[:error].first[:detail]).to eq("Origin, destination, and api_key are required.")
+  end
+
+  it "returns error message if user doesn't exist with provided api_key" do
+    user = User.create(email: "road@trip.com", password: "password", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
+    params = {
+      "origin": "Cincinatti,OH",
+      "destination": "Chicago,IL",
+      "api_key": "x1h2i3s4_i5s6_l7e8g9i10t1x"
+    }
+    post '/api/v0/road_trip', params: params
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(401)
+    response_body = JSON.parse(response.body, symbolize_names: true)
+    expect(response_body).to be_a(Hash)
+    expect(response_body[:error]).to be_a(Array)
+    expect(response_body[:error].first[:status]).to eq("401")
+    expect(response_body[:error].first[:detail]).to eq("Sorry, your credentials are bad.")
+  end
 end
