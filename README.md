@@ -23,19 +23,27 @@ This is my mod3 final solo project at Turing. It involves taking a city and extr
 
 1. Clone the repository.
 
-   ```git clone git@github.com:WagglyDessert/sweater_whether.git```
+```
+git clone git@github.com:WagglyDessert/sweater_whether.git
+```
 
 2. Install Dependencies
 
-```bundle install```
+```
+bundle install
+```
 
 3. Set database
 
-```rails db:{drop,create,migrate,seed}```
+```
+rails db:{drop,create,migrate,seed}
+```
 
 4. Delete masterkey and credentials.yml.enc file and add your own api keys to credentials. Use the following code to do so:
 
-```EDITOR="code --wait" rails credentials:edit```
+```
+EDITOR="code --wait" rails credentials:edit
+```
 
 5. In your credentials yml that popped up, add the following:
 ```
@@ -54,8 +62,10 @@ This is my mod3 final solo project at Turing. It involves taking a city and extr
 
 ### Running the tests
   -RSpec is setup so all you need to do is run:
-  
-  ```Bundle exec rspec```
+
+```
+Bundle exec rspec
+```
 
 ### Authors
   * Nathan Trautenberg
