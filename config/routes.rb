@@ -9,4 +9,10 @@ Rails.application.routes.draw do
       get "/forecast", to: "forecast#location"
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      get "/munchies", to: "munchies#search"
+    end
+  end
 end
