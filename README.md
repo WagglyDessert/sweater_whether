@@ -29,14 +29,15 @@ This is my mod3 final solo project. It involves taking a city and extracting geo
 ```rails db:{drop,create,migrate,seed}```
 4. Delete masterkey and credentials.yml.enc file and add your own api keys to credentials
 ```EDITOR="code --wait" rails credentials:edit```
-  In your credentials yml that popped up, add the following:
+5. In your credentials yml that popped up, add the following:
 ```yelp:
     key: Bearer [insert your api key here]
    weather:
     key: [insert your api key here]
    mapquest:
-    key: [insert your api key here]```
-  5. Close the credentials file and you should be good to start making api calls!
+    key: [insert your api key here]
+```
+6. Close the credentials file and you should be good to start making api calls!
 
 ### Release History
 * 0.0.1
