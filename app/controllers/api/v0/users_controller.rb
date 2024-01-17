@@ -28,6 +28,26 @@ class Api::V0::UsersController < ApplicationController
       render json: { error: [{status: "422", detail: 'Password and password confirmation do not match.' }] }, status: :unprocessable_entity
     end
   end
+
+  def login
+    user = User.find_by(email: params[:email])
+    if user.nil?
+      render json: { error: [{status: "422", detail: 'Sorry, your credentials are bad.' }] }, status: :unprocessable_entity
+    elsif user.authenticate(params[:password])
+      render json: {
+        data: {
+          type: 'users',
+          id: user.id.to_s,
+          attributes: {
+            email: user.email,
+            api_key: user.api_key
+          }
+        }
+      }, status: :created
+    else
+      render json: { error: [{status: "422", detail: 'Sorry, your credentials are bad.' }] }, status: :unprocessable_entity
+    end
+  end
   
   private
   def user_params
