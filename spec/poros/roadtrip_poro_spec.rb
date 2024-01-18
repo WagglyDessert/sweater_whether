@@ -8,8 +8,13 @@ RSpec.describe Roadtrip do
     roadtrip_data = JSON.parse(json_data_roadtrip, symbolize_names: true)
     destination = "Boulder,CO"
     origin = "Denver,CO"
-
-    search = Roadtrip.new(roadtrip_data, weather_data, destination, origin)
+    travel_time = roadtrip_data[:route][:legs].first[:formattedTime]
+    weather_at_eta = {
+      datetime: "2024-01-17 13:05",
+      temperature: 22.6,
+      condition: "Mostly sunny."
+    }
+    search = Roadtrip.new(travel_time, weather_at_eta, destination, origin)
 
     expect(search).to be_a Roadtrip
     expect(search.id).to eq(nil)

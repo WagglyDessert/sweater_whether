@@ -100,6 +100,13 @@ describe "Roadtrip duration from start to end" do
     expect(response).to be_successful
     expect(response.status).to eq(200)
     response_body = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
+    expect(response_body).to be_a(Hash)
+    expect(response_body[:data][:id]).to eq(nil)
+    expect(response_body[:data][:type]).to eq("roadtrip")
+    expect(response_body[:data][:attributes][:start_city]).to eq("nyc, NY")
+    expect(response_body[:data][:attributes][:end_city]).to eq("London, UK")
+    expect(response_body[:data][:attributes][:travel_time]).to eq("impossible")
+    expect(response_body[:data][:attributes][:weather_at_eta]).to be_a Hash
+    expect(response_body[:data][:attributes][:weather_at_eta]).to eq({})
   end
 end
