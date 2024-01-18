@@ -73,4 +73,33 @@ describe "Roadtrip duration from start to end" do
     expect(response_body[:error].first[:status]).to eq("401")
     expect(response_body[:error].first[:detail]).to eq("Sorry, your credentials are bad.")
   end
+
+  it "travels from nyc to la a day later", :vcr do
+    user = User.create(email: "road@trip.com", password: "password", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
+    params = {
+      "origin": "nyc,NY",
+      "destination": "LA,CA",
+      "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
+    }
+    post '/api/v0/road_trip', params: params
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+    response_body = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  it "cannot travel from nyc to London", :vcr do
+    user = User.create(email: "road@trip.com", password: "password", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
+    params = {
+      "origin": "nyc,NY",
+      "destination": "London,UK",
+      "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
+    }
+    post '/api/v0/road_trip', params: params
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+    response_body = JSON.parse(response.body, symbolize_names: true)
+    binding.pry
+  end
 end

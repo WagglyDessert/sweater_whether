@@ -9,7 +9,11 @@ class RoadtripFacade
     lon = geocode_data[:results].first[:locations].first[:latLng][:lng]
     weather = WeatherService.new.find_weather(lat, lon) 
     weather_data = JSON.parse(weather.body, symbolize_names: true)
-    #make a Poro
+    if roadtrip_data[:route][:routeError].present?
+      binding.pry
+      roadtrip_data = "impossible"
+      weather_data = {}
+    end
     Roadtrip.new(roadtrip_data, weather_data, destination, origin)
   end
 end

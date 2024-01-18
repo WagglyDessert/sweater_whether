@@ -24,10 +24,12 @@ class Roadtrip
   end
 
   def calculate_travel_time(travel_time, weather_data)
-    travel_time_obj = DateTime.parse(travel_time)
+    hours, minutes, seconds = travel_time.split(':').map(&:to_i)
+    total_seconds = hours * 3600 + minutes * 60 + seconds
+    travel_duration = total_seconds.seconds
     current_time_obj = DateTime.parse(weather_data[:location][:localtime])
-    result_datetime = current_time_obj + Rational(travel_time_obj.hour * 3600 + travel_time_obj.min * 60 + travel_time_obj.sec, 86400)
-    formatted_result = result_datetime.strftime("%Y-%m-%d %H:%M")
+    end_date = current_time_obj + travel_duration
+    formatted_result = end_date.strftime("%Y-%m-%d %H:%M")
   end
 
   def find_destination_forecast(datetime, weather_data)
