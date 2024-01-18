@@ -73,4 +73,40 @@ describe "Roadtrip duration from start to end" do
     expect(response_body[:error].first[:status]).to eq("401")
     expect(response_body[:error].first[:detail]).to eq("Sorry, your credentials are bad.")
   end
+
+  it "travels from nyc to la a day later", :vcr do
+    user = User.create(email: "road@trip.com", password: "password", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
+    params = {
+      "origin": "nyc,NY",
+      "destination": "LA,CA",
+      "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
+    }
+    post '/api/v0/road_trip', params: params
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+    response_body = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  it "cannot travel from nyc to London", :vcr do
+    user = User.create(email: "road@trip.com", password: "password", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
+    params = {
+      "origin": "nyc,NY",
+      "destination": "London,UK",
+      "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
+    }
+    post '/api/v0/road_trip', params: params
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+    response_body = JSON.parse(response.body, symbolize_names: true)
+    expect(response_body).to be_a(Hash)
+    expect(response_body[:data][:id]).to eq(nil)
+    expect(response_body[:data][:type]).to eq("roadtrip")
+    expect(response_body[:data][:attributes][:start_city]).to eq("nyc, NY")
+    expect(response_body[:data][:attributes][:end_city]).to eq("London, UK")
+    expect(response_body[:data][:attributes][:travel_time]).to eq("impossible")
+    expect(response_body[:data][:attributes][:weather_at_eta]).to be_a Hash
+    expect(response_body[:data][:attributes][:weather_at_eta]).to eq({})
+  end
 end

@@ -6,7 +6,7 @@ class Api::V0::RoadtripController < ApplicationController
     else
     user = User.find_by(api_key: params[:api_key])
       if user.nil?
-        render json: { error: [{status: "401", detail: 'Sorry, your credentials are bad.' }] }, status: :unauthorized
+        render json: ErrorSerializer.new(ErrorMessage.new("Sorry, your credentials are bad.", 401)).serialize_json, status: :unauthorized
       else
         destination = params[:destination]
         origin = params[:origin]
