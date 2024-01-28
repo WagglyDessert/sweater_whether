@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v0 do
       get "/forecast", to: "forecast#location"
+      post "/users", to: "users#create"
+      post "/sessions", to: "users#login"
+      post "/road_trip", to: "roadtrip#duration"
     end
   end
 
