@@ -12,4 +12,10 @@ Rails.application.routes.draw do
       post "/road_trip", to: "roadtrip#duration"
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      get "/munchies", to: "munchies#search"
+    end
+  end
 end

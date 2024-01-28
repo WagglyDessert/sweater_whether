@@ -1,0 +1,274 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?location=denver,co&sort_by=best_match&term=thai
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer iF-JAi2M2msJd1CP86LnaNw4tdATpjDQMgf6k1S7jjbwc-IDxqgj3JD95wokHI4jYZU7CEcKo8kH0dF-P6X6lp7hf5KqbsiCWysxAOIzRTFuFNsZJoPXRtlSm3iYZXYx
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      X-B3-Sampled:
+      - '0'
+      X-Routing-Service:
+      - routing-main--useast1-74f644dc4b-h8w8x; site=public_api_v3
+      Ratelimit-Dailylimit:
+      - '500.0'
+      X-Zipkin-Id:
+      - 90623f65921ce9eb
+      Ratelimit-Remaining:
+      - '482.0'
+      Server:
+      - envoy
+      Ratelimit-Resettime:
+      - '2024-01-18T00:00:00+00:00'
+      X-Mode:
+      - ro
+      X-Proxied:
+      - 10-65-79-132-useast1aprod
+      X-Extlb:
+      - 10-65-79-132-useast1aprod
+      Cache-Control:
+      - max-age=0, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 17 Jan 2024 03:20:14 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8246-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Alt-Svc:
+      - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "TT0dqdc_YfaN5AlELRYSTQ", "alias": "aloy-modern-thai-denver",
+        "name": "Aloy Modern Thai", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/7RiwlFpCWf0pNqwHri50zw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/aloy-modern-thai-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 763, "categories": [{"alias": "thai", "title": "Thai"}, {"alias":
+        "bars", "title": "Bars"}, {"alias": "asianfusion", "title": "Asian Fusion"}],
+        "rating": 4.5, "coordinates": {"latitude": 39.75426, "longitude": -104.99066},
+        "transactions": ["delivery", "pickup"], "price": "$$", "location": {"address1":
+        "2134 Larimer St", "address2": null, "address3": "", "city": "Denver", "zip_code":
+        "80205", "country": "US", "state": "CO", "display_address": ["2134 Larimer
+        St", "Denver, CO 80205"]}, "phone": "+13033799759", "display_phone": "(303)
+        379-9759", "distance": 2718.960745630176}, {"id": "gN8o-SG2PgCQGYrOCkkqng",
+        "alias": "liangs-thai-food-denver", "name": "Liang''s Thai Food", "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/9_RGrE1oyWgDWu7pofvtPg/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/liangs-thai-food-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 434, "categories": [{"alias": "thai", "title": "Thai"}, {"alias":
+        "foodtrucks", "title": "Food Trucks"}], "rating": 4.5, "coordinates": {"latitude":
+        39.744534991803064, "longitude": -104.99127846288025}, "transactions": ["delivery"],
+        "price": "$", "location": {"address1": "16TH St And California St", "address2":
+        "", "address3": "", "city": "Denver", "zip_code": "80202", "country": "US",
+        "state": "CO", "display_address": ["16TH St And California St", "Denver, CO
+        80202"]}, "phone": "+17208108693", "display_phone": "(720) 810-8693", "distance":
+        2058.6817098646698}, {"id": "RTvR4W7K-59xFFZAUTMTbQ", "alias": "lucky-noodles-denver",
+        "name": "Lucky Noodles", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/sI1LfYfMkL0k-6f6U702VQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/lucky-noodles-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 235, "categories": [{"alias": "thai", "title": "Thai"}, {"alias":
+        "noodles", "title": "Noodles"}, {"alias": "coffee", "title": "Coffee & Tea"}],
+        "rating": 4.5, "coordinates": {"latitude": 39.7402, "longitude": -104.97194},
+        "transactions": ["delivery", "pickup"], "price": "$$", "location": {"address1":
+        "1201 E Colfax Ave", "address2": "Ste 102", "address3": "", "city": "Denver",
+        "zip_code": "80218", "country": "US", "state": "CO", "display_address": ["1201
+        E Colfax Ave", "Ste 102", "Denver, CO 80218"]}, "phone": "+17209171000", "display_phone":
+        "(720) 917-1000", "distance": 541.9058239564879}, {"id": "HBBs_ruVCXXaNc-8ZxyezQ",
+        "alias": "daughter-thai-kitchen-and-bar-denver", "name": "Daughter Thai Kitchen
+        & Bar", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/tCVslKN2gbYq_une1-z1Yg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/daughter-thai-kitchen-and-bar-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 472, "categories": [{"alias": "thai", "title": "Thai"}, {"alias":
+        "bars", "title": "Bars"}, {"alias": "tapasmallplates", "title": "Tapas/Small
+        Plates"}], "rating": 4.5, "coordinates": {"latitude": 39.75805360976755, "longitude":
+        -105.00689620000004}, "transactions": ["delivery", "pickup"], "price": "$$",
+        "location": {"address1": "1700 Platte St", "address2": "Ste 140", "address3":
+        "", "city": "Denver", "zip_code": "80202", "country": "US", "state": "CO",
+        "display_address": ["1700 Platte St", "Ste 140", "Denver, CO 80202"]}, "phone":
+        "+17206674652", "display_phone": "(720) 667-4652", "distance": 4011.7857685535114},
+        {"id": "BqqesHM5ZounBdqLXpIruQ", "alias": "hey-bangkok-denver", "name": "Hey
+        Bangkok!", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/kXG1KxkBVEAqMKN1Pu5U5Q/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/hey-bangkok-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 183, "categories": [{"alias": "thai", "title": "Thai"}, {"alias":
+        "noodles", "title": "Noodles"}], "rating": 4.5, "coordinates": {"latitude":
+        39.7109567, "longitude": -104.981987}, "transactions": ["delivery", "pickup"],
+        "price": "$$", "location": {"address1": "301 S Pennsylvania St", "address2":
+        "", "address3": null, "city": "Denver", "zip_code": "80209", "country": "US",
+        "state": "CO", "display_address": ["301 S Pennsylvania St", "Denver, CO 80209"]},
+        "phone": "+13037770559", "display_phone": "(303) 777-0559", "distance": 2910.503629157787},
+        {"id": "bRqLrRbr2D7x66cw97yIeg", "alias": "aloy-thai-eatery-capitol-hill-denver",
+        "name": "Aloy Thai Eatery-Capitol Hill", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/g-MUFob63NII8L5c8469RA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/aloy-thai-eatery-capitol-hill-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 42, "categories": [{"alias": "thai", "title": "Thai"}, {"alias":
+        "panasian", "title": "Pan Asian"}, {"alias": "asianfusion", "title": "Asian
+        Fusion"}], "rating": 4.5, "coordinates": {"latitude": 39.72742, "longitude":
+        -104.98455}, "transactions": ["delivery", "pickup"], "location": {"address1":
+        "211 E 7th Ave", "address2": null, "address3": "", "city": "Denver", "zip_code":
+        "80203", "country": "US", "state": "CO", "display_address": ["211 E 7th Ave",
+        "Denver, CO 80203"]}, "phone": "+17209123453", "display_phone": "(720) 912-3453",
+        "distance": 1516.4232034834492}, {"id": "SPieJmwG5rC2awVhokCn2g", "alias":
+        "la-mai-thai-kitchen-edgewater", "name": "La Mai Thai Kitchen", "image_url":
+        "https://s3-media3.fl.yelpcdn.com/bphoto/pH-TwglYbyYGJ3gZD8xM-Q/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/la-mai-thai-kitchen-edgewater?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 83, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.5, "coordinates": {"latitude": 39.74787, "longitude": -105.05359}, "transactions":
+        ["delivery", "pickup"], "location": {"address1": "2001 Sheridan Blvd", "address2":
+        "Unit C", "address3": "", "city": "Edgewater", "zip_code": "80214", "country":
+        "US", "state": "CO", "display_address": ["2001 Sheridan Blvd", "Unit C", "Edgewater,
+        CO 80214"]}, "phone": "+17205920082", "display_phone": "(720) 592-0082", "distance":
+        7252.753220643697}, {"id": "VOhBjGoL12ss4f0pxBfoVA", "alias": "pepper-asian-bistro-ii-denver",
+        "name": "Pepper Asian Bistro II", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/KZzxO_9sbWFj3C8hmhIWAg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/pepper-asian-bistro-ii-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 514, "categories": [{"alias": "chinese", "title": "Chinese"},
+        {"alias": "asianfusion", "title": "Asian Fusion"}, {"alias": "thai", "title":
+        "Thai"}], "rating": 4.5, "coordinates": {"latitude": 39.769119, "longitude":
+        -105.00202}, "transactions": ["delivery", "pickup"], "price": "$$", "location":
+        {"address1": "3759 Lipan St", "address2": null, "address3": null, "city":
+        "Denver", "zip_code": "80211", "country": "US", "state": "CO", "display_address":
+        ["3759 Lipan St", "Denver, CO 80211"]}, "phone": "+17205247818", "display_phone":
+        "(720) 524-7818", "distance": 4616.492485729331}, {"id": "EA6usmUxhmR_w_I42ojf8w",
+        "alias": "sweet-ginger-denver", "name": "Sweet Ginger", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/QYjx1QsWi4v3gDXvjP0-Zw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/sweet-ginger-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 514, "categories": [{"alias": "asianfusion", "title": "Asian
+        Fusion"}, {"alias": "sushi", "title": "Sushi Bars"}], "rating": 4.0, "coordinates":
+        {"latitude": 39.72076, "longitude": -104.95537}, "transactions": ["delivery",
+        "pickup"], "price": "$$", "location": {"address1": "2710 E 3rd Ave", "address2":
+        "", "address3": "", "city": "Denver", "zip_code": "80206", "country": "US",
+        "state": "CO", "display_address": ["2710 E 3rd Ave", "Denver, CO 80206"]},
+        "phone": "+13039967270", "display_phone": "(303) 996-7270", "distance": 2069.339690355638},
+        {"id": "yRl2-nI6P15QASVda1qqwA", "alias": "farmhouse-thai-eatery-lakewood",
+        "name": "Farmhouse Thai Eatery", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/RbJA38_L-Zfusuh5__Kdew/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/farmhouse-thai-eatery-lakewood?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 401, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.5, "coordinates": {"latitude": 39.71698, "longitude": -105.08001}, "transactions":
+        ["delivery", "pickup"], "price": "$$", "location": {"address1": "98 Wadsworth
+        Blvd", "address2": "Ste 117", "address3": null, "city": "Lakewood", "zip_code":
+        "80226", "country": "US", "state": "CO", "display_address": ["98 Wadsworth
+        Blvd", "Ste 117", "Lakewood, CO 80226"]}, "phone": "+13032372475", "display_phone":
+        "(303) 237-2475", "distance": 9560.234685552405}, {"id": "6EruGdmewWCxZ6v3giSt0A",
+        "alias": "thai-pot-cafe-denver-2", "name": "Thai Pot Cafe", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/OylbXkJH4OkT27uICd2fww/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/thai-pot-cafe-denver-2?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 572, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.0, "coordinates": {"latitude": 39.69205898681927, "longitude": -104.93944970029818},
+        "transactions": ["delivery", "pickup"], "price": "$$", "location": {"address1":
+        "1350 S Colorado Blvd", "address2": "Ste 191", "address3": "", "city": "Denver",
+        "zip_code": "80222", "country": "US", "state": "CO", "display_address": ["1350
+        S Colorado Blvd", "Ste 191", "Denver, CO 80222"]}, "phone": "+13036396200",
+        "display_phone": "(303) 639-6200", "distance": 5504.3280020262755}, {"id":
+        "1Ewnzn8tZIoMSlsN9ek2jA", "alias": "pearl-of-siam-aurora", "name": "Pearl
+        of Siam", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/N3EwHM-cmNhQV7e6iB94UA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/pearl-of-siam-aurora?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 873, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.5, "coordinates": {"latitude": 39.6515196724319, "longitude": -104.770704899475},
+        "transactions": ["pickup"], "price": "$$", "location": {"address1": "18660
+        E Hampden Ave", "address2": "", "address3": "", "city": "Aurora", "zip_code":
+        "80013", "country": "US", "state": "CO", "display_address": ["18660 E Hampden
+        Ave", "Aurora, CO 80013"]}, "phone": "+13036177408", "display_phone": "(303)
+        617-7408", "distance": 19461.156392822762}, {"id": "lgttVcqKDC7NHYKVp3OrRw",
+        "alias": "9thai-restaurant-denver", "name": "9Thai Restaurant", "image_url":
+        "https://s3-media3.fl.yelpcdn.com/bphoto/kQcaVSjnihjmyOJuhaClKA/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/9thai-restaurant-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 226, "categories": [{"alias": "thai", "title": "Thai"}, {"alias":
+        "comfortfood", "title": "Comfort Food"}, {"alias": "noodles", "title": "Noodles"}],
+        "rating": 4.0, "coordinates": {"latitude": 39.7399351, "longitude": -104.939205},
+        "transactions": ["delivery", "pickup"], "price": "$$", "location": {"address1":
+        "4122 E Colfax Ave", "address2": "", "address3": null, "city": "Denver", "zip_code":
+        "80220", "country": "US", "state": "CO", "display_address": ["4122 E Colfax
+        Ave", "Denver, CO 80220"]}, "phone": "+13039936342", "display_phone": "(303)
+        993-6342", "distance": 2738.4264000461753}, {"id": "dinVSYS-jT9vxogupULkTg",
+        "alias": "mon-thai-denver", "name": "Mon Thai", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/X4DLDFRCX1-RYaIgI7xzXw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/mon-thai-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 30, "categories": [{"alias": "thai", "title": "Thai"}, {"alias":
+        "desserts", "title": "Desserts"}, {"alias": "bubbletea", "title": "Bubble
+        Tea"}], "rating": 4.5, "coordinates": {"latitude": 39.72828, "longitude":
+        -104.99832}, "transactions": ["delivery", "pickup"], "location": {"address1":
+        "750 Santa Fe Dr", "address2": null, "address3": "", "city": "Denver", "zip_code":
+        "80204", "country": "US", "state": "CO", "display_address": ["750 Santa Fe
+        Dr", "Denver, CO 80204"]}, "phone": "+17205191720", "display_phone": "(720)
+        519-1720", "distance": 2529.69746411279}, {"id": "3jUEko_bfIfpmYjNZUAH4g",
+        "alias": "us-thai-cafe-edgewater-2", "name": "US Thai Cafe", "image_url":
+        "https://s3-media4.fl.yelpcdn.com/bphoto/NhviSsIBO-OP-n9d9TV1gQ/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/us-thai-cafe-edgewater-2?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 910, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.0, "coordinates": {"latitude": 39.75294726395204, "longitude": -105.05415474662726},
+        "transactions": ["pickup"], "price": "$$", "location": {"address1": "5228
+        W 25th Ave", "address2": "", "address3": "", "city": "Edgewater", "zip_code":
+        "80214", "country": "US", "state": "CO", "display_address": ["5228 W 25th
+        Ave", "Edgewater, CO 80214"]}, "phone": "+13032333345", "display_phone": "(303)
+        233-3345", "distance": 7431.101234765595}, {"id": "-KFQJfkFxiCuF1DsXmKB_g",
+        "alias": "ros-siam-denver", "name": "Ros Siam", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/L1PEdCugGqCbNbvo_H5rmw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/ros-siam-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 188, "categories": [{"alias": "thai", "title": "Thai"}, {"alias":
+        "asianfusion", "title": "Asian Fusion"}, {"alias": "noodles", "title": "Noodles"}],
+        "rating": 4.5, "coordinates": {"latitude": 39.755057, "longitude": -105.020173},
+        "transactions": ["delivery", "restaurant_reservation", "pickup"], "location":
+        {"address1": "2637 W 26th Ave", "address2": null, "address3": "", "city":
+        "Denver", "zip_code": "80211", "country": "US", "state": "CO", "display_address":
+        ["2637 W 26th Ave", "Denver, CO 80211"]}, "phone": "+13039530291", "display_phone":
+        "(303) 953-0291", "distance": 4789.452382681802}, {"id": "xM1l4yCBHxBE6J76lNngtA",
+        "alias": "pepper-asian-bistro-denver", "name": "Pepper Asian Bistro", "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/XPeL07Tx-rT_f51J-fuN-w/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/pepper-asian-bistro-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 769, "categories": [{"alias": "asianfusion", "title": "Asian
+        Fusion"}, {"alias": "chinese", "title": "Chinese"}, {"alias": "thai", "title":
+        "Thai"}], "rating": 4.0, "coordinates": {"latitude": 39.7403705, "longitude":
+        -104.9539956}, "transactions": ["delivery", "pickup"], "price": "$$", "location":
+        {"address1": "2831 E Colfax Ave", "address2": "", "address3": "", "city":
+        "Denver", "zip_code": "80206", "country": "US", "state": "CO", "display_address":
+        ["2831 E Colfax Ave", "Denver, CO 80206"]}, "phone": "+13033888377", "display_phone":
+        "(303) 388-8377", "distance": 1490.294828450006}, {"id": "GrlTR5bdXP9M4HkQRenyPQ",
+        "alias": "chada-thai-denver", "name": "Chada Thai", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/RvFe2pWDaW-X9nXjNOxE9w/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/chada-thai-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 268, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.0, "coordinates": {"latitude": 39.7435406, "longitude": -104.9631401}, "transactions":
+        ["delivery", "pickup"], "price": "$$", "location": {"address1": "2005 E 17th
+        Ave", "address2": "", "address3": "", "city": "Denver", "zip_code": "80206",
+        "country": "US", "state": "CO", "display_address": ["2005 E 17th Ave", "Denver,
+        CO 80206"]}, "phone": "+13033208582", "display_phone": "(303) 320-8582", "distance":
+        1078.7269569567502}, {"id": "RAxVYH2Unts01S0HBOjsJw", "alias": "suvipa-thai-food-denver-2",
+        "name": "Suvipa Thai Food", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/ura5kObiyCro0EuFgnZ1qA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/suvipa-thai-food-denver-2?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 331, "categories": [{"alias": "thai", "title": "Thai"}, {"alias":
+        "noodles", "title": "Noodles"}], "rating": 4.5, "coordinates": {"latitude":
+        39.69808990104998, "longitude": -105.02547216835268}, "transactions": ["delivery",
+        "pickup"], "price": "$$", "location": {"address1": "1015 S Federal Blvd",
+        "address2": "", "address3": "", "city": "Denver", "zip_code": "80219", "country":
+        "US", "state": "CO", "display_address": ["1015 S Federal Blvd", "Denver, CO
+        80219"]}, "phone": "+17203796038", "display_phone": "(720) 379-6038", "distance":
+        6295.996533167985}, {"id": "OhvqhQEZlgfmgWGnqBkFjg", "alias": "ginger-pig-denver",
+        "name": "Ginger Pig", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/5E9oW-wMrbcQ0R0Vq3zjJA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/ginger-pig-denver?adjust_creative=WR8j6bjFy9ZvXPCb5KGzFw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=WR8j6bjFy9ZvXPCb5KGzFw",
+        "review_count": 210, "categories": [{"alias": "chinese", "title": "Chinese"},
+        {"alias": "thai", "title": "Thai"}, {"alias": "cocktailbars", "title": "Cocktail
+        Bars"}], "rating": 4.5, "coordinates": {"latitude": 39.776086, "longitude":
+        -105.034136}, "transactions": ["delivery", "pickup"], "price": "$$", "location":
+        {"address1": "4262 Lowell Blvd", "address2": "", "address3": "", "city": "Denver",
+        "zip_code": "80211", "country": "US", "state": "CO", "display_address": ["4262
+        Lowell Blvd", "Denver, CO 80211"]}, "phone": "+17203248416", "display_phone":
+        "(720) 324-8416", "distance": 7086.326620356998}], "total": 731, "region":
+        {"center": {"longitude": -104.97024536132812, "latitude": 39.73552421220229}}}'
+  recorded_at: Wed, 17 Jan 2024 03:20:14 GMT
+recorded_with: VCR 6.2.0
