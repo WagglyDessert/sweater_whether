@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+#sad path testing for incorrect city/state input
 describe "Forecast geocode and mapquest API Endpoint" do
   it "send weather about a specific location", :vcr do
     get '/api/v0/forecast?location=cincinatti,oh'

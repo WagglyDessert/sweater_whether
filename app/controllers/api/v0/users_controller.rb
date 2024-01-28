@@ -11,6 +11,7 @@ class Api::V0::UsersController < ApplicationController
       end
       user = User.new(user_params)
       if user.save
+        #serialize user creation
         render json: {
         data: {
           type: 'users',
@@ -34,6 +35,7 @@ class Api::V0::UsersController < ApplicationController
     if user.nil?
       render json: { error: [{status: "422", detail: 'Sorry, your credentials are bad.' }] }, status: :unprocessable_entity
     elsif user.authenticate(params[:password])
+      # serialize login
       render json: {
         data: {
           type: 'users',
